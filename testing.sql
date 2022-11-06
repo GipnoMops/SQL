@@ -119,35 +119,3 @@ FROM testing
     JOIN subject USING(subject_id)
 GROUP BY testing.question_id
 ORDER BY name_subject, Успешность DESC, name_question
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
