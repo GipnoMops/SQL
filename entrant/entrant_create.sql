@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS department(
+CREATE TABLE department(
     department_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_department VARCHAR(30)
 );
@@ -7,7 +7,7 @@ VALUES
     ('Инженерная школа'),
     ('Школа естественных наук');
 
-CREATE TABLE IF NOT EXISTS subject(
+CREATE TABLE subject(
     subject_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_subject VARCHAR(30)
 );
@@ -18,7 +18,7 @@ VALUES
     ('Физика'),
     ('Информатика');
 
-CREATE TABLE IF NOT EXISTS program(
+CREATE TABLE program(
     program_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_program VARCHAR(50),
     department_id INT,
@@ -32,7 +32,7 @@ VALUES
     ('Прикладная механика', 1, 2),
     ('Мехатроника и робототехника', 1, 3);
 
-CREATE TABLE IF NOT EXISTS enrollee(
+CREATE TABLE enrollee(
     enrollee_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_enrollee VARCHAR(50)
 );
@@ -45,7 +45,7 @@ VALUES
     ('Попов Илья'),
     ('Степанова Дарья');
 
-CREATE TABLE IF NOT EXISTS achievement(
+CREATE TABLE achievement(
     achievement_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_achievement VARCHAR(30),
     bonus INT
@@ -57,7 +57,7 @@ VALUES
     ('Золотой значок ГТО', 3),
     ('Серебряный значок ГТО    ', 1);
 
-CREATE TABLE IF NOT EXISTS enrollee_achievement(
+CREATE TABLE enrollee_achievement(
     enrollee_achiev_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     enrollee_id INT,
     achievement_id INT,
@@ -73,7 +73,7 @@ VALUES
     (5, 1),
     (5, 3);
 
-CREATE TABLE IF NOT EXISTS program_subject(
+CREATE TABLE program_subject(
     program_subject_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     program_id INT,
     subject_id INT,
@@ -96,7 +96,7 @@ VALUES
     (4, 2, 45),
     (4, 3, 45);
 
-CREATE TABLE IF NOT EXISTS program_enrollee(
+CREATE TABLE program_enrollee(
     program_enrollee_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     program_id INT,
     enrollee_id INT,
