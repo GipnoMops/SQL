@@ -120,7 +120,7 @@ VALUES
     (3, 6),
     (4, 6);
 
-CREATE TABLE IF NOT EXISTS enrollee_subject(
+CREATE TABLE enrollee_subject(
     enrollee_subject_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     enrollee_id INT,
     subject_id INT,
