@@ -7,7 +7,7 @@ VALUES
     ('Инженерная школа'),
     ('Школа естественных наук');
 
-CREATE TABLE subject(
+CREATE TABLE IF NOT EXISTS subject(
     subject_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_subject VARCHAR(30)
 );
