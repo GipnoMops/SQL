@@ -1,14 +1,4 @@
-DROP TABLE IF EXISTS department;
-DROP TABLE IF EXISTS subject;
-DROP TABLE IF EXISTS program;
-DROP TABLE IF EXISTS enrollee;
-DROP TABLE IF EXISTS achievement;
-DROP TABLE IF EXISTS enrollee_achievement;
-DROP TABLE IF EXISTS program_subject;
-DROP TABLE IF EXISTS program_enrollee;
-DROP TABLE IF EXISTS enrollee_subject;
-
-CREATE TABLE department(
+CREATE TABLE IF NOT EXISTS department(
     department_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_department VARCHAR(30)
 );
@@ -28,7 +18,7 @@ VALUES
     ('Физика'),
     ('Информатика');
 
-CREATE TABLE program(
+CREATE TABLE IF NOT EXISTS program(
     program_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_program VARCHAR(50),
     department_id INT,
@@ -42,7 +32,7 @@ VALUES
     ('Прикладная механика', 1, 2),
     ('Мехатроника и робототехника', 1, 3);
 
-CREATE TABLE enrollee(
+CREATE TABLE IF NOT EXISTS enrollee(
     enrollee_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_enrollee VARCHAR(50)
 );
@@ -55,7 +45,7 @@ VALUES
     ('Попов Илья'),
     ('Степанова Дарья');
 
-CREATE TABLE achievement(
+CREATE TABLE IF NOT EXISTS achievement(
     achievement_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name_achievement VARCHAR(30),
     bonus INT
@@ -67,7 +57,7 @@ VALUES
     ('Золотой значок ГТО', 3),
     ('Серебряный значок ГТО    ', 1);
 
-CREATE TABLE enrollee_achievement(
+CREATE TABLE IF NOT EXISTS enrollee_achievement(
     enrollee_achiev_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     enrollee_id INT,
     achievement_id INT,
@@ -83,7 +73,7 @@ VALUES
     (5, 1),
     (5, 3);
 
-CREATE TABLE program_subject(
+CREATE TABLE IF NOT EXISTS program_subject(
     program_subject_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     program_id INT,
     subject_id INT,
@@ -106,7 +96,7 @@ VALUES
     (4, 2, 45),
     (4, 3, 45);
 
-CREATE TABLE program_enrollee(
+CREATE TABLE IF NOT EXISTS program_enrollee(
     program_enrollee_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     program_id INT,
     enrollee_id INT,
@@ -130,7 +120,7 @@ VALUES
     (3, 6),
     (4, 6);
 
-CREATE TABLE enrollee_subject(
+CREATE TABLE IF NOT EXISTS enrollee_subject(
     enrollee_subject_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     enrollee_id INT,
     subject_id INT,
